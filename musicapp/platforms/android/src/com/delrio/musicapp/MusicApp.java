@@ -19,8 +19,11 @@
 
 package com.delrio.musicapp;
 
+import org.apache.cordova.CordovaActivity;
+
+import android.os.Build;
 import android.os.Bundle;
-import org.apache.cordova.*;
+import android.webkit.WebView;
 
 public class MusicApp extends CordovaActivity
 {
@@ -30,5 +33,8 @@ public class MusicApp extends CordovaActivity
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        	  WebView.setWebContentsDebuggingEnabled(true);
+        }
     }
 }

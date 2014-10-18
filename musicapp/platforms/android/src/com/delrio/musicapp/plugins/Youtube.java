@@ -17,7 +17,7 @@ public class Youtube extends CordovaPlugin {
 			try {
 				String artist = args.getString(0);
 				search(artist);
-				callbackContext.success("Artist searched with success!");
+				callbackContext.success("Youtube opened!");
 				return true;
 			} catch (Exception e) {
 				callbackContext.error(e.getMessage());
