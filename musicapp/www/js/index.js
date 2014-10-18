@@ -1,9 +1,9 @@
-var app = (function() {
+var app = (function($) {
     
     var webServices = {
         lastFm : {
             searchArtistByName : function(artist, callback) {
-                var url = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + encodeURI(artist) + "&api_key=INSERT_YOUR_API_KEY&format=json&autocorrect=1";
+                var url = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + encodeURI(artist) + "&api_key=ebae15afecf2443398e62e755fbdd336&format=json&autocorrect=1&lang=pt";
                 $.ajax({
                     url: url,
                     success : callback
@@ -74,4 +74,4 @@ var app = (function() {
         webServices : webServices,
         plugins : plugins
     }
-}());
+}(jQuery));
